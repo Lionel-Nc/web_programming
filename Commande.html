@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title> Commande Pass IDF </title>
+    </head>
+<body>
+    <header>
+
+        <h1> Commander votre Pass IDF !</h1> 
+
+        <form>
+            <fieldset>
+                <h2> Etape 1 :  Création du compte</h2> 
+
+                <label for="nom"> <strong>Nom : </strong></label> <br>
+                <input type="text" id="nom" value="nom" size = 20> <br> <br>
+
+                <label for="prénom"> <strong>Prénom : </strong></label> <br>
+                <input type="text" id="prénom" value="prenom" size = 20> <br> <br>
+
+                <label for="adresse"> <strong>Adresse : </strong></label> <br>
+                <input type="text" id="adresse" value="adresse" size = 20> <br> <br>
+
+                <label for="tel"> <strong>Téléphone : </strong> </label> <br>
+                <input type="tel" id="tel" value="telephone" size = 20> <br> <br>
+
+                <label for="email"> <strong>Email : </strong> </label> <br>
+                <input type="email" id="email" value="mail" size = 20> <br> <br>
+
+                <label for="email"> <strong>Confirmation email : </strong> </label> <br>
+                <input type="email" id="email" value="mail" size = 20> <br> <br>
+
+                <label for="mdp"> <strong>Mot de passe : </strong></label> <br>
+                <input type="password" id="mdp"  size = 20> <br> <br>
+
+                <label for="email"> <strong>Confirmation mot de passe : </strong> </label> <br>
+                <input type="password" id="mdp"  size = 20> <br> <br>
+            </fieldset>
+            <br> <br>
+            <fieldset>
+                <h2> Etape 2 : Commande </h2>
+            
+                <label for="nbpass"> Nombre de pass: </label>
+                <select id = "nbpass">
+                    <option> 1 </option>
+                    <option> 2 </option>
+                    <option> 3 </option>
+                    <option> 4 </option>
+                    <option> 5 </option>
+                    <option> 6 </option>
+                    <option> 7 </option>
+                    <option> 8 </option>
+                    <option> 9 </option>
+                    <option> 10 </option>
+                </select> <br> <br>
+
+                <label for="typepass"> Type de pass: </label>
+                <select id = "typepass">
+                    <option> PassIDF n°1 </option>
+                    <option> PassIDF n°2 </option>
+                    <option> PassIDF n°3 </option>
+                </select> <br> <br>
+
+                <label for="date"> Date : </label>
+                <input type="date" id="date" name ="date"> 
+                <br> <br>
+            </fieldset>
+            <br> 
+
+            <input type="checkbox" id="facture" name = "facture"> 
+            <label for="facture"> <strong>Je certifie </strong> avoir pris connaissance des conditions générales de vente du Pass IDF </label>
+            <br> <br>
+
+            <button type = "submit"> Passer la commande </button>
+
+        </form>
+    </header>
+</body>
+</html>
