@@ -39,3 +39,30 @@ footer {
     background-color: #F2FBFF;
     color: #617D89;
 }
+
+div.container{
+    display: flex;
+    flex-direction: column;
+}
+
+div.container2{
+    display:flex;
+    justify-content: space-between ;
+    margin-left: 70px;
+    margin-right : 70px;
+}
+
+h1{
+    color: #ffffff;
+    font-size: 2.5em;
+}
+
+section.toppage1{
+    background : url("../images/Activité1top.jpg") no-repeat;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
