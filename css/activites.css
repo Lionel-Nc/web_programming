@@ -1,3 +1,4 @@
+/* Les propriétés css s'appliquent aux tags "a" du tag "li" */
 li a {
     float: right;
     margin: 0;
@@ -8,19 +9,19 @@ li a {
     padding: 20px 20px;
     text-decoration: none;
 }
-/* Permet de changer la couleur des items leur de leur survol */
+/* Permet de changer la couleur des items lors de leur survol */
 li a:hover {
     background-color: #C8F0FF;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
 }
-a {
-    display: block;
-    padding: 0;
-    background-color: #F2FBFF;
-}
-ul {
+.nav_menu {
+    position:fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-inline-start: 0;
     list-style-type: none;
     margin: 0;
     padding: 0;

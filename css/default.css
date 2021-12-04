@@ -1,9 +1,8 @@
-li {
+/* Les propriétés css s'appliquent aux tags "a" du tag "li" */
+li a {
     float: right;
     margin: 0;
     padding: 0;
-}
-li a {
     display: block;
     color: #617D89;
     text-align: center;
@@ -17,12 +16,12 @@ li a:hover {
     padding: 10px;
     margin: 10px;
 }
-a {
-    display: block;
-    padding: 0;
-    background-color: #F2FBFF;
-}
-ul {
+.nav_menu {
+    position:fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-inline-start: 0;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -31,7 +30,7 @@ ul {
 }
 .logos {
     margin: 0;
-    paddding: 0;
+    padding: 0;
     float: left;
 }
 footer {
