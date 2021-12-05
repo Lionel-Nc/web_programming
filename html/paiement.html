@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title> Paiement </title>
+        <link rel="stylesheet" href="../css/paiement.css">
+        <script type="text/javascript" src="../js/default.js"></script>
+    </head>
+<body>
+    <ul class="nav_menu">
+        <li class="logos"><img src="../images/log.png" alt="logo" height="56" width="160"></li>
+        <li><a href="about.html">A propos</a></li>
+        <li><a href="activites.html">Activités</a></li>
+        <li><a href="commande.html">Commande</a></li>
+        <li><a href="idfpass.html">Idf pass</a></li>
+        <li><a href="../Accueil.html">Accueil</a></li>
+    </ul>
+    <div>
+        <h1> "Frise" avec les étapes de la commande </h1> 
+
+        <form>
+            <fieldset class="container">
+                <h2> Détails de la carte </h2>  <br>
+
+                <label for="numcarte"> <strong>N° carte : </strong></label> 
+                <input type="text" id="numcarte" size = 20> <br> <br>
+
+                <label for="dateexpiration"> <strong>Date d'expiration : </strong></label> 
+                <input type="text" id="dateexpiration"size = 20> <br> <br>
+
+                <label for="crypt"> <strong>Cryptogramme : </strong></label> 
+                <input type="text" id="crypt" size = 20> <br> <br>
+
+            </fieldset>
+            <br> <br>
+            <fieldset class = "container">
+                <h2> Coordonnées </h2>  <br>
+            
+                <label for="nom"> <strong>Nom : </strong></label>
+                <input type="text" id="nom"  size = 20> <br> <br>
+
+                <label for="prénom"> <strong>Prénom : </strong></label>
+                <input type="text" id="prénom" size = 20> <br> <br>
+
+                <label for="tel"> <strong>Téléphone : </strong> </label> 
+                <input type="tel" id="tel" size = 20> <br> <br>
+
+                <h2> Adresse de facturation </h2>  <br>
+
+                <label for="adresse"> <strong>Adresse : </strong></label>
+                <input type="text" id="adresse" size = 20> <br> <br>
+
+                <label for="codepostal"> <strong>Code Postal : </strong> </label> 
+                <input type="text" id="codepostal" size = 20> <br> <br>
+
+            </fieldset>
+            <br> 
+
+            <input type="checkbox" id="facture" name = "facture"> 
+            <label for="facture"> <strong>Je certifie </strong> avoir pris connaissance des conditions générales de vente du Pass IDF </label>
+            <br> <br>
+
+            <button type = "submit"> Payer </button> <br> <br>
+
+        </form>
+
+    </div>
+    <footer>
+        <p>© 2021 Efrei</p>
+    </footer>
+    
+</body>
+</html>

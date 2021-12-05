@@ -41,6 +41,15 @@ footer {
     color: #617D89;
 }
 
+.container{
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px 10px 20px 10px;
+    border-radius: 20px;
+    width:50%;
+    margin : 0 auto; /* pour centrer horizontalement*/
+}
+
 button {
     position: relative;
     float : right;
