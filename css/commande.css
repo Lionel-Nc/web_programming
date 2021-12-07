@@ -40,6 +40,47 @@ footer {
     background-color: #F2FBFF;
     color: #617D89;
 }
+/* Float four columns side by side */
+.column {
+    box-sizing: border-box;
+    float: left;
+    width: 20%;
+    padding: 0 30px;
+  }
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {  
+    box-sizing: border-box;
+    width: 80%;
+    padding-top: 100px;
+    margin-left: 15%;
+}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    box-sizing: border-box;
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .card {
+      box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 5px;
+    text-align: center;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    
+  }
+  /* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
 
 button {
     position: relative;
