@@ -5,6 +5,7 @@
         <title> Commande Pass IDF </title>
         <link rel="stylesheet" href="../css/commande.css">
         <script type="text/javascript" src="../js/default.js"></script>
+        <form name="newCommand" action="#" class="box" id="new-command" onsubmit="return false"> 
     </head>
 <body>
     <ul class="nav_menu">
@@ -48,91 +49,86 @@
           </div>
         <h1> Commander votre Pass IDF !</h1> 
 
-        <form>
+        <form class = "left">
+
             <fieldset>
-                <h2> Etape 1 :  Création du compte</h2> 
+                <h2> Commande </h2>
 
-                <label for="nom"> <strong>Nom : </strong></label> <br>
-                <input type="text" id="nom" value="nom" size = 20> <br> <br>
+                <div >
+                        <label for="typepass"> Type de pass: </label>
+                        <select id = "typepass">
+                            <option> PassIDF n°1 </option>
+                            <option> PassIDF n°2 </option>
+                            <option> PassIDF n°3 </option>
+                        </select> <br> <br>
 
-                <label for="prénom"> <strong>Prénom : </strong></label> <br>
-                <input type="text" id="prénom" value="prenom" size = 20> <br> <br>
+                        <label for="nbAdultes"> Adultes: </label>
+                        <select id = "nbAdultes">
+                            <option> 1 </option>
+                            <option> 2 </option>
+                            <option> 3 </option>
+                            <option> 4 </option>
+                            <option> 5 </option>
+                            <option> 6 </option>
+                            <option> 7 </option>
+                            <option> 8 </option>
+                            <option> 9 </option>
+                            <option> 10 </option>
+                        </select> <br> <br>
 
-                <label for="adresse"> <strong>Adresse : </strong></label> <br>
-                <input type="text" id="adresse" value="adresse" size = 20> <br> <br>
+                        <label for="nbEnfants"> Enfants: </label>
+                        <select id = "nbEnfants">
+                            <option> 1 </option>
+                            <option> 2 </option>
+                            <option> 3 </option>
+                            <option> 4 </option>
+                            <option> 5 </option>
+                            <option> 6 </option>
+                            <option> 7 </option>
+                            <option> 8 </option>
+                            <option> 9 </option>
+                            <option> 10 </option>
+                        </select> <br> <br>
 
-                <label for="tel"> <strong>Téléphone : </strong> </label> <br>
-                <input type="tel" id="tel" value="telephone" size = 20> <br> <br>
+                        <label for="date"> Date : </label>
+                        <input type="date" id="date" name ="date"> 
 
-                <label for="email"> <strong>Email : </strong> </label> <br>
-                <input type="email" id="email" value="mail" size = 20> <br> <br>
-
-                <label for="email"> <strong>Confirmation email : </strong> </label> <br>
-                <input type="email" id="email" value="mail" size = 20> <br> <br>
-
-                <label for="mdp"> <strong>Mot de passe : </strong></label> <br>
-                <input type="password" id="mdp"  size = 20> <br> <br>
-
-                <label for="email"> <strong>Confirmation mot de passe : </strong> </label> <br>
-                <input type="password" id="mdp"  size = 20> <br> <br>
+                        <p> 
+                          <button type="submit" class="btn" onclick="ajouter()">Ajouter</button>
+                          <button type="reset"  class="btn" onclick="annuler()">Annuler</button>
+                        </p>
+              </div>
+              <br> <br>
             </fieldset>
-            <br> <br>
+
             <fieldset>
-                <h2> Etape 2 : Commande </h2>
 
-                <label for="typepass"> Type de pass: </label>
-                <select id = "typepass">
-                    <option> PassIDF n°1 </option>
-                    <option> PassIDF n°2 </option>
-                    <option> PassIDF n°3 </option>
-                </select> <br> <br>
-            
-                <label for="nbpass"> Nombre de pass: </label>
-                <select id = "nbpass">
-                    <option> 1 </option>
-                    <option> 2 </option>
-                    <option> 3 </option>
-                    <option> 4 </option>
-                    <option> 5 </option>
-                    <option> 6 </option>
-                    <option> 7 </option>
-                    <option> 8 </option>
-                    <option> 9 </option>
-                    <option> 10 </option>
-                </select> <br> <br>
+            <h2> Informations personnelles</h2> 
 
-                <label for="Adultes"> Adultes: </label>
-                <select id = "Adultes">
-                    <option> 1 </option>
-                    <option> 2 </option>
-                    <option> 3 </option>
-                    <option> 4 </option>
-                    <option> 5 </option>
-                    <option> 6 </option>
-                    <option> 7 </option>
-                    <option> 8 </option>
-                    <option> 9 </option>
-                    <option> 10 </option>
-                </select> <br> <br>
+            <label for="nom"> <strong>Nom : </strong></label> <br>
+            <input type="text" id="nom" size = 20> <br> <br>
 
-                <label for="Enfants"> Enfants: </label>
-                <select id = "Enfants">
-                    <option> 1 </option>
-                    <option> 2 </option>
-                    <option> 3 </option>
-                    <option> 4 </option>
-                    <option> 5 </option>
-                    <option> 6 </option>
-                    <option> 7 </option>
-                    <option> 8 </option>
-                    <option> 9 </option>
-                    <option> 10 </option>
-                </select> <br> <br>
+            <label for="prénom"> <strong>Prénom : </strong></label> <br>
+            <input type="text" id="prénom" size = 20> <br> <br>
 
-                <label for="date"> Date : </label>
-                <input type="date" id="date" name ="date"> 
-                <br> <br>
-            </fieldset>
+            <label for="adresse"> <strong>Adresse : </strong></label> <br>
+            <input type="text" id="adresse" size = 20> <br> <br>
+
+            <label for="tel"> <strong>Téléphone : </strong> </label> <br>
+            <input type="tel" id="tel" size = 20> <br> <br>
+
+            <label for="email"> <strong>Email : </strong> </label> <br>
+            <input type="email" id="email" size = 20> <br> <br>
+
+            <label for="email"> <strong>Confirmation email : </strong> </label> <br>
+            <input type="email" id="email"  size = 20> <br> <br>
+
+            <label for="mdp"> <strong>Mot de passe : </strong></label> <br>
+            <input type="password" id="mdp"  size = 20> <br> <br>
+
+            <label for="email"> <strong>Confirmation mot de passe : </strong> </label> <br>
+            <input type="password" id="mdp"  size = 20> <br> <br>
+        </fieldset>
             <br> 
 
             <input type="checkbox" id="facture" name = "facture"> 
@@ -143,10 +139,90 @@
 
         </form>
 
+    <div class="right">
+          <fieldset class = container>
+            Récapitultif <br>
+            <table class="datatable">
+            <thead>
+               <tr>
+                 <th> Article </th>
+                 <th> Prix </th>
+               </tr>
+            </thead>
+              <tbody>
+              </tbody>
+            </table>
+           </fieldset>
+      </div>
     </div>
     <footer>
         <p>© 2021 Efrei</p>
     </footer>
     
+    <script>
+
+  var newCommandForm = document.forms.newCommand; 
+
+
+function ajouter(){
+
+  console.log("Ajout réalisé")
+
+  const newArticleTr = document.createElement('tr')
+  const typePassTd = document.createElement('td')
+  const prixtotalPassTd = document.createElement('td')
+  const newAdultesTr = document.createElement('tr')
+  const typeadulteTd = document.createElement('td')
+  const nbadulteTd = document.createElement('td')
+  const newEnfantsTr = document.createElement('tr')
+  const typeenfantTd = document.createElement('td')
+  const nbenfantTd = document.createElement('td')
+  typePassTd.textContent = document.newCommand.typepass.value
+  prixtotalPassTd.textContent = "prix total à dét"
+  typeadulteTd.textContent = "Adultes" 
+  nbadulteTd.textContent = document.newCommand.nbAdultes.value  
+  typeenfantTd.textContent = "Enfants" 
+  nbenfantTd.textContent = document.newCommand.nbEnfants.value
+  
+  //const selectEntree = document.getElementById("entreeId");
+  //const valeurselectionnee = selectEntree.options[selectEntree.selectedIndex].value;
+  //const textselectionne = selectEntree.options[selectEntree.selectedIndex].text;
+
+
+
+
+  /*if (!document.newCommand.nom.checkValidity() ||
+        !document.newCommand.prenom.checkValidity() ||
+        !document.newCommand.adresse.checkValidity() ||
+        !document.newCommand.email.checkValidity()
+       ) {
+             return
+      }*/
+  
+
+  //const table = document.querySelector('table')
+  newArticleTr.append(typePassTd,prixtotalPassTd)
+  newAdultesTr.append(typeadulteTd,nbadulteTd)
+  newEnfantsTr.append(typeenfantTd,nbenfantTd)
+
+   /* le premier élément dans le document qui contient la classe "datatable" est retourné*/
+  const table = document.querySelector('.datatable tbody')
+
+  table.appendChild(newArticleTr, newAdultesTr, newEnfantsTr)
+
+}
+
+  // supprimer toutes les lignes du tableau
+  //ex2)3)viii)
+/*function supprimer() {
+      const tbody = document.querySelector('.datatable tbody' )
+      while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild)
+      }
+  
+}*/
+
+</script>
+
 </body>
 </html>

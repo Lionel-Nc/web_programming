@@ -34,11 +34,12 @@ li a:hover {
     float: left;
 }
 footer {
-    display: flex;
-    justify-content: center;
-    padding: 5px;
-    background-color: #F2FBFF;
-    color: #617D89;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  background-color: #F2FBFF;
+  color: #617D89;
+  width : 100%;
 }
 /* Float four columns side by side */
 .column {
@@ -85,4 +86,29 @@ footer {
 button {
     position: relative;
     float : right;
+}
+
+.right{
+  float: right;
+  width: 50%;
+  height:60%;
+}
+
+.left{
+  float: left;
+  width: 50%;
+}
+
+fieldset{
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px 10px 20px 10px;
+  border-radius: 20px;
+  width:70%; 
+}
+
+.container{
+  border: 1px solid black;
+  border-radius: 20px;
+  width:80%;
 }
