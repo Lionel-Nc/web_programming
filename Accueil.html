@@ -17,6 +17,46 @@
                 <li><a href="accueil.html">Accueil</a></li>
             </ul>
         </div>
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 4</div>
+                <img src="images/cathedrale.jpg" style="width:100%">
+                <div class="text">Cathédrale notre dame</div>
+            </div>
+  
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 4</div>
+                <img src="images/chateau.jpg" style="width:100%">
+                <div class="text">Chateau de versailles</div>
+            </div>
+  
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 4</div>
+                <img src="images/louvre.jpg" style="width:100%">
+                <div class="text">Musée du Louvre</div>
+             </div>
+             <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="images/tour_eiffel.jpg" style="width:100%">
+                <div class="text">Tour Eiffel</div>
+             </div>
+  
+        <!-- Boutons suivant et précédent -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+         </div>
+        <br>
+  
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
         <div>
             <h1>find your magic</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut massa non eros elementum consectetur.
@@ -85,5 +125,33 @@
         <footer>
             <p>© 2021 Efrei</p>
         </footer>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }
+            </script>
     </body>
 </html>
