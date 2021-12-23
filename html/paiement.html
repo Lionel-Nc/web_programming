@@ -23,13 +23,16 @@
                 <h2> Détails de la carte </h2>  <br>
 
                 <label for="numcarte"> <strong>N° carte : </strong></label> 
-                <input type="text" id="numcarte" size = 20> <br> <br>
+                <input type="text" id="numcarte" size = 20 required> <br> 
+                <span class="error"> <p id="numcarte_error" > </p> </span>
 
                 <label for="dateexpiration"> <strong>Date d'expiration : </strong></label> 
-                <input type="text" id="dateexpiration"size = 20> <br> <br>
+                <input type="text" id="dateexpiration"size = 20 required> <br> 
+                <span class="error"> <p id="dateexpiration_error" > </p> </span>
 
                 <label for="crypt"> <strong>Cryptogramme : </strong></label> 
-                <input type="text" id="crypt" size = 20> <br> <br>
+                <input type="text" id="crypt" size = 20 required> <br>
+                <span class="error"> <p id="crypt_error" > </p> </span>
 
             </fieldset>
             <br> <br>
@@ -37,30 +40,31 @@
                 <h2> Coordonnées </h2>  <br>
             
                 <label for="nom"> <strong>Nom : </strong></label>
-                <input type="text" id="nom"  size = 20> <br> <br>
+                <input type="text" id="nom"  size = 20 required> <br> 
+                <span class="error"> <p id="nom_error" > </p> </span>
 
-                <label for="prénom"> <strong>Prénom : </strong></label>
-                <input type="text" id="prénom" size = 20> <br> <br>
+                <label for="prenom"> <strong>Prénom : </strong></label>
+                <input type="text" id="prenom" size = 20 required> <br> 
+                <span class="error"> <p id="prenom_error" > </p> </span>
 
                 <label for="tel"> <strong>Téléphone : </strong> </label> 
-                <input type="tel" id="tel" size = 20> <br> <br>
+                <input type="tel" id="tel" size = 20 required> <br>
+                <span class="error"> <p id="tel_error" > </p> </span>
 
                 <h2> Adresse de facturation </h2>  <br>
 
                 <label for="adresse"> <strong>Adresse : </strong></label>
-                <input type="text" id="adresse" size = 20> <br> <br>
+                <input type="text" id="adresse" size = 20 required> <br>
+                <span class="error"> <p id="adresse_error" > </p> </span>
 
                 <label for="codepostal"> <strong>Code Postal : </strong> </label> 
-                <input type="text" id="codepostal" size = 20> <br> <br>
+                <input type="text" id="codepostal" size = 20 required> <br>
+                <span class="error"> <p id="codepostal_error" > </p> </span>
 
             </fieldset>
             <br> 
 
-            <input type="checkbox" id="facture" name = "facture"> 
-            <label for="facture"> <strong>Je certifie </strong> avoir pris connaissance des conditions générales de vente du Pass IDF </label>
-            <br> <br>
-
-            <button type = "submit"> Payer </button> <br> <br>
+            <button type = "submit" onclick="valider()"> Payer </button> <br> <br>
 
         </form>
 
@@ -68,6 +72,87 @@
     <footer>
         <p>© 2021 Efrei</p>
     </footer>
+
+    <script>
+
+    function valider(){
+
+            /*
+            var error = 0;
+        
+            var v_numcarte = document.getElementById("numcarte").value;
+            if (v_numcarte== null || v_numcarte== "") {
+                document.getElementById("numcarte_error").innerHTML = "Ce champs est obligatoire.";
+                error++;
+            }
+            else {
+            document.getElementById("numcarte_error").innerHTML = "";
+            }
+            
+            var v_dateexpiration = document.getElementById("dateexpiration").value;
+            if (v_dateexpiration == null || v_dateexpiration== "") {
+                document.getElementById("dateexpiration_error").innerHTML = "Ce champs est obligatoire.";
+                error++;
+            }
+            else {
+            document.getElementById("dateexpiration_error").innerHTML = " ";
+            }
+
+            var v_crypt = document.getElementById("crypt").value;
+            if (v_crypt == null || v_crypt== "") {
+                document.getElementById("crypt_error").innerHTML = "Ce champs est obligatoire.";
+                error++;
+            }
+            else {
+            document.getElementById("crypt_error").innerHTML = " ";
+            }
+
+            var v_tel = document.getElementById("tel").value;
+            if (v_tel == null || v_tel== "") {
+                document.getElementById("tel_error").innerHTML = "Ce champs est obligatoire.";
+                error++;
+            }
+            else {
+            document.getElementById("tel_error").innerHTML = " ";
+            }
+
+            var v_adresse = document.getElementById("adresse").value;
+            if (v_adresse == null || v_adresse== "") {
+                document.getElementById("adresse_error").innerHTML = "Ce champs est obligatoire.";
+                error++;
+            }
+            else {
+            document.getElementById("adresse_error").innerHTML = " ";
+            }
+
+            var v_codepostal = document.getElementById("codepostal").value;
+            if (v_codepostal == null || v_codepostal== "") {
+                document.getElementById("codepostal_error").innerHTML = "Ce champs est obligatoire.";
+                error++;
+            }
+            else {
+            document.getElementById("codepostal_error").innerHTML = " ";
+            }
+
+            console.log(error);
+            if (error==0){
+                alert("OK!");
+            }*/
+
+        if (document.getElementById("numcarte").checkValidity()&&
+            document.getElementById("dateexpiration").checkValidity()&&
+            document.getElementById("crypt").checkValidity()&&
+            document.getElementById("nom").checkValidity()&&
+            document.getElementById("prenom").checkValidity()&&
+            document.getElementById("tel").checkValidity()&&
+            document.getElementById("adresse").checkValidity()&&
+            document.getElementById("codepostal").checkValidity()
+            ){
+                alert("Merci pour votre commande! Un email de confirmation va vous être envoyé!");
+                window.location.href="about.html";
+            }
+    }
+    </script>
     
 </body>
 </html>

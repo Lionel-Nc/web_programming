@@ -16,7 +16,7 @@
         <li><a href="idfpass.html">Idf pass</a></li>
         <li><a href="../Accueil.html">Accueil</a></li>
     </ul>
-    <div class="content">
+
         <div class="row">
             <div class="column">
               <div class="card">
@@ -47,11 +47,15 @@
               </div>
             </div>
           </div>
+
+
         <h1> Commander votre Pass IDF !</h1> 
 
-        <form class = "left">
+      <div class="bigcontainer">
 
-            <fieldset>
+        <div class="smallcontainer1">
+          <form>
+            <fieldset >
                 <h2> Commande </h2>
 
                 <div >
@@ -91,11 +95,13 @@
                         </select> <br> <br>
 
                         <label for="date"> Date : </label>
-                        <input type="date" id="date" name ="date"> 
+                        <input type="date" id="date" name ="date" required> <br>
+
+                        <span class="error"> <p id="ajout_error"> </p> </span>
 
                         <p> 
                           <button type="submit" class="btn" onclick="ajouter()">Ajouter</button>
-                          <button type="reset"  class="btn" onclick="annuler()">Annuler</button>
+                          <button type="reset"  class="btn" onclick="supprimer()">Supprimer</button>
                         </p>
               </div>
               <br> <br>
@@ -103,124 +109,253 @@
 
             <fieldset>
 
-            <h2> Informations personnelles</h2> 
+              <h2> Informations personnelles</h2> 
 
-            <label for="nom"> <strong>Nom : </strong></label> <br>
-            <input type="text" id="nom" size = 20> <br> <br>
+              <label for="nom"> <strong>Nom : </strong></label> <br>
+              <input type="text" id="nom" size = 20 > <br> 
+              <span class="error"> <p id="nom_error"> </p> </span>
 
-            <label for="prénom"> <strong>Prénom : </strong></label> <br>
-            <input type="text" id="prénom" size = 20> <br> <br>
+              <label for="prenom"> <strong>Prénom : </strong></label> <br>
+              <input type="text" id="prenom" size = 20 > <br> 
+              <span class="error"> <p id="prenom_error"> </p> </span>
 
-            <label for="adresse"> <strong>Adresse : </strong></label> <br>
-            <input type="text" id="adresse" size = 20> <br> <br>
+              <label for="adresse"> <strong>Adresse : </strong></label> <br>
+              <input type="text" id="adresse" size = 20 > <br> 
+              <span class="error"> <p id="adresse_error" > </p> </span>
 
-            <label for="tel"> <strong>Téléphone : </strong> </label> <br>
-            <input type="tel" id="tel" size = 20> <br> <br>
+              <label for="tel"> <strong>Téléphone : </strong> </label> <br>
+              <input type="tel" id="tel" size = 20 > <br> 
+              <span class="error"> <p  id="tel_error"> </p> </span>
 
-            <label for="email"> <strong>Email : </strong> </label> <br>
-            <input type="email" id="email" size = 20> <br> <br>
+              <label for="email"> <strong>Email : </strong> </label> <br>
+              <input type="email" id="email" size = 20 > <br>
+              <span class="error"> <p  id="email_error" ></p> </span>
 
-            <label for="email"> <strong>Confirmation email : </strong> </label> <br>
-            <input type="email" id="email"  size = 20> <br> <br>
+              <label for="conf_email"> <strong>Confirmation email : </strong> </label> <br>
+              <input type="email" id="conf_email"  size = 20 > <br>
+              <span class="error"> <p  id="conf_email_error"> </p> </span>
 
-            <label for="mdp"> <strong>Mot de passe : </strong></label> <br>
-            <input type="password" id="mdp"  size = 20> <br> <br>
+              <label for="mdp"> <strong>Mot de passe : </strong></label> <br>
+              <input type="password" id="mdp"  size = 20 > <br> 
+              <span class="error"> <p id="mdp_error" ></p> </span>
 
-            <label for="email"> <strong>Confirmation mot de passe : </strong> </label> <br>
-            <input type="password" id="mdp"  size = 20> <br> <br>
-        </fieldset>
+              <label for="conf_mdp"> <strong>Confirmation mot de passe : </strong> </label> <br>
+              <input type="password" id="conf_mdp"  size = 20 > <br> 
+              <span class="error"> <p id="conf_mdp_error"  > </p> </span>
+
+            </fieldset>
             <br> 
+          </form>
+        </div>
 
-            <input type="checkbox" id="facture" name = "facture"> 
-            <label for="facture"> <strong>Je certifie </strong> avoir pris connaissance des conditions générales de vente du Pass IDF </label>
-            <br> <br>
-
-            <button type="submit" onclick=window.location.href="paiement.html"> Confirmer </button> <br> <br>
-
-        </form>
-
-    <div class="right">
-          <fieldset class = container>
-            Récapitultif <br>
+        <div class="smallcontainer2">
+          <fieldset class = total>
+             Récapitultif <br>
             <table class="datatable">
-            <thead>
-               <tr>
-                 <th> Article </th>
-                 <th> Prix </th>
-               </tr>
-            </thead>
+              <thead>
+                <tr>
+                  <th> Article </th>
+                  <th> Prix </th>
+                </tr>
+              </thead>
               <tbody>
               </tbody>
             </table>
-           </fieldset>
+          </fieldset>
+        </div>
       </div>
-    </div>
+
+    <input type="checkbox" id="facture" name = "facture"> 
+    <label for="facture"> <strong>Je certifie </strong> avoir pris connaissance des conditions générales de vente du Pass IDF </label>
+    <br> 
+    <span class="error"> <p id="facture_error"  > </p> </span>
+
+    <button type="submit" class="submit" onclick="valider()"> Confirmer </button> <br> <br>
+          
     <footer>
         <p>© 2021 Efrei</p>
     </footer>
     
-    <script>
+
+
+
+  <script>
 
   var newCommandForm = document.forms.newCommand; 
 
-
+  var ajout = 0
 function ajouter(){
 
-  console.log("Ajout réalisé")
+  if (document.newCommand.date.checkValidity()) {
+    const newArticleTr = document.createElement('tr')
+    const typePassTd = document.createElement('td')
+    const prixtotalPassTd = document.createElement('td')
+    const newAdultesTr = document.createElement('tr')
+    const typeadulteTd = document.createElement('td')
+    const nbadulteTd = document.createElement('td')
+    const newEnfantsTr = document.createElement('tr')
+    const typeenfantTd = document.createElement('td')
+    const nbenfantTd = document.createElement('td')
+    typePassTd.textContent = document.newCommand.typepass.value
+    prixtotalPassTd.textContent = "prix total à dét"
+    typeadulteTd.textContent = "Adultes" 
+    nbadulteTd.textContent = document.newCommand.nbAdultes.value  
+    typeenfantTd.textContent = "Enfants" 
+    nbenfantTd.textContent = document.newCommand.nbEnfants.value
 
-  const newArticleTr = document.createElement('tr')
-  const typePassTd = document.createElement('td')
-  const prixtotalPassTd = document.createElement('td')
-  const newAdultesTr = document.createElement('tr')
-  const typeadulteTd = document.createElement('td')
-  const nbadulteTd = document.createElement('td')
-  const newEnfantsTr = document.createElement('tr')
-  const typeenfantTd = document.createElement('td')
-  const nbenfantTd = document.createElement('td')
-  typePassTd.textContent = document.newCommand.typepass.value
-  prixtotalPassTd.textContent = "prix total à dét"
-  typeadulteTd.textContent = "Adultes" 
-  nbadulteTd.textContent = document.newCommand.nbAdultes.value  
-  typeenfantTd.textContent = "Enfants" 
-  nbenfantTd.textContent = document.newCommand.nbEnfants.value
-  
+    newArticleTr.append(typePassTd,prixtotalPassTd)
+    newAdultesTr.append(typeadulteTd,nbadulteTd)
+    newEnfantsTr.append(typeenfantTd,nbenfantTd)
+
+   /* le premier élément dans le document qui contient la classe "datatable" est retourné*/
+    const table = document.querySelector('.datatable tbody')
+
+    table.appendChild(newArticleTr, newAdultesTr, newEnfantsTr)
+    ajout++;
+  }
   //const selectEntree = document.getElementById("entreeId");
   //const valeurselectionnee = selectEntree.options[selectEntree.selectedIndex].value;
   //const textselectionne = selectEntree.options[selectEntree.selectedIndex].text;
 
-
-
-
-  /*if (!document.newCommand.nom.checkValidity() ||
-        !document.newCommand.prenom.checkValidity() ||
-        !document.newCommand.adresse.checkValidity() ||
-        !document.newCommand.email.checkValidity()
-       ) {
-             return
-      }*/
-  
-
-  //const table = document.querySelector('table')
-  newArticleTr.append(typePassTd,prixtotalPassTd)
-  newAdultesTr.append(typeadulteTd,nbadulteTd)
-  newEnfantsTr.append(typeenfantTd,nbenfantTd)
-
-   /* le premier élément dans le document qui contient la classe "datatable" est retourné*/
-  const table = document.querySelector('.datatable tbody')
-
-  table.appendChild(newArticleTr, newAdultesTr, newEnfantsTr)
-
 }
 
   // supprimer toutes les lignes du tableau
-  //ex2)3)viii)
-/*function supprimer() {
-      const tbody = document.querySelector('.datatable tbody' )
+function supprimer() {
+      const tbody = document.querySelector('.datatable tbody')
       while (tbody.firstChild) {
         tbody.removeChild(tbody.firstChild)
       }
   
-}*/
+}
+
+
+function valider() {
+
+  var error = 0; 
+  
+  // vérifier qu'au moins un article est commandé
+  if (ajout==0) {
+    document.getElementById("ajout_error").innerHTML = "Veuillez ajouter au moins un article à la commande.";
+    error++;
+  }
+  else {
+    document.getElementById("ajout_error").innerHTML = "";
+  }
+
+  //vérifier que tous les champs du formulaire sont remplis
+  var v_nom = document.getElementById("nom").value;
+  if (v_nom== "") {
+      document.getElementById("nom_error").innerHTML = "Ce champs est obligatoire.";
+      error++;
+  }
+  else {
+    document.getElementById("nom_error").innerHTML = "";
+  }
+
+  var v_prenom = document.getElementById("prenom").value;
+  if (v_prenom== "") {
+    document.getElementById("prenom_error").innerHTML = "Ce champs est obligatoire.";
+    error++;
+  }
+  else {
+    document.getElementById("prenom_error").innerHTML = "";
+  }
+
+  var v_adresse = document.getElementById("adresse").value;
+  if (v_adresse== "") {
+    document.getElementById("adresse_error").innerHTML = "Ce champs est obligatoire.";
+    error++;
+  }
+  else {
+    document.getElementById("adresse_error").innerHTML = "";
+  }
+
+  var v_tel= document.getElementById("tel").value;
+  if (v_tel == null || v_tel== "") {
+    document.getElementById("tel_error").innerHTML = "Ce champs est obligatoire.";
+    error++;
+  }
+  else {
+    document.getElementById("tel_error").innerHTML = "";
+  }
+
+  var v_email = document.getElementById("email").value;
+  if (v_email == null || v_email== "") {
+      document.getElementById("email_error").innerHTML = "Ce champs est obligatoire.";
+      error++;
+    }
+  else {
+    document.getElementById("email_error").innerHTML = "";
+  }
+
+  var v_conf_email = document.getElementById("conf_email").value;
+  if (v_conf_email == null || v_conf_email== "") {
+      document.getElementById("conf_email_error").innerHTML = "Ce champs est obligatoire.";
+      error++;
+    }
+  else {
+    // vérification de la confirmation
+    if (v_email!=v_conf_email){
+      document.getElementById("conf_email_error").innerHTML = "Les mails saisis ne sont pas identiques.";
+      error++;
+    }
+    else {
+      document.getElementById("conf_email_error").innerHTML = ""
+    };
+  }
+
+  var v_mdp = document.getElementById("mdp").value;
+  if (v_mdp == null || v_mdp== "") {
+      document.getElementById("mdp_error").innerHTML = "Ce champs est obligatoire.";
+      error++;
+    }
+  else {
+    document.getElementById("mdp_error").innerHTML = "";
+  }
+
+  var v_conf_mdp = document.getElementById("conf_mdp").value;
+  if (v_conf_mdp == null || v_conf_mdp== "") {
+      document.getElementById("conf_mdp_error").innerHTML = "Ce champs est obligatoire.";
+      error++;
+    }
+  else {
+    // vérification de la confirmation
+    if (v_mdp!=v_conf_mdp){
+      document.getElementById("conf_mdp_error").innerHTML = "Les mots de passe saisis ne sont pas identiques.";
+      error++;
+    }
+    else {
+      document.getElementById("conf_mdp_error").innerHTML = ""
+    };
+  }
+
+  /*var variable = [nom, prenom, adresse, tel, email, conf_email, mdp, conf_mdp];
+  variable.forEach( function(v){
+    var val = document.form.v.value;
+    if (val == null || val== "") {
+      document.getElementById(v.toString()+'_error').innerHTML = "This field must be filled out";
+    };
+  });*/
+
+
+  // vérifier que la case sur les conditions de vente est remplie
+  if(document.getElementById("facture").checked==false){
+    document.getElementById("facture_error").innerHTML = "Ce champs est obligatoire.";
+      error++;
+  }
+  else {
+      document.getElementById("facture_error").innerHTML = ""
+  };
+
+  // penser à ajouter une condition sur la date : date > date d'aujourd'hui
+
+  // si toutes les conditions sont remplies passer à la page suivante
+  // console.log(error);
+  if (error==0){
+    window.location.href="paiement.html";
+  }
+}
+
 
 </script>
 
