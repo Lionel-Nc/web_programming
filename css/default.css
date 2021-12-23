@@ -33,15 +33,16 @@ li a:hover {
     padding: 0;
     float: left;
 }
+.navigation {
+  padding-bottom: 50px;
+}
 
 * {box-sizing:border-box}
 
 /* Slideshow container */
 .slideshow-container {
   max-width: 5000px;
-  position: relative;
-  padding-top: 50px;
-  margin-top: 20px;
+  margin: auto;
   
 }
 
@@ -92,7 +93,7 @@ li a:hover {
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
-  padding: 8px 12px;
+
   position: absolute;
   top: 0;
 }
