@@ -45,9 +45,68 @@ footer {
 
 table {
     border-collapse: collapse;
+    width:70%;
+    margin:0 auto;
+    margin-bottom: 20px;
 }
 
 td,th {
     border : 1px solid black;
     padding : 10px;
+}
+
+.myheader{
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width:100%;
+    margin-top: 80px;
+}
+
+.cercle1{
+    height: 200px;
+    width: 200px;
+    border: 1px solid rgba(0,0,0, 1);
+    border-radius: 50%;
+    background-image: url("../images/louvre.jpg");
+    object-fit: center;
+}
+
+.cercle2{
+    height: 200px;
+    width: 200px;
+    border: 1px solid rgba(0,0,0, 1);
+    border-radius: 50%;
+    background-image: url("../images/expo.jpg");
+    background-position: center;
+    object-fit: contain;
+}
+
+.cercle3{
+    height: 200px;
+    width: 200px;
+    border: 1px solid rgba(0,0,0, 1);
+    border-radius: 50%;
+    background-image: url("../images/cinema.jpg");
+    background-position: center;
+    object-fit: contain;
+}
+
+.cercle4{
+    height: 200px;
+    width: 200px;
+    border: 1px solid rgba(0,0,0, 1);
+    border-radius: 50%;
+    background-image: url("../images/Disney.jfif");
+    background-position: center;
+    object-fit: contain;
+}
+
+.bloc{
+    margin-bottom: 50px;
+    text-align: center;
 }

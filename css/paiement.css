@@ -54,3 +54,8 @@ button {
     position: relative;
     float : right;
 }
+
+.error {
+    color: red;
+    font-size: 60%;
+  }

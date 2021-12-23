@@ -23,13 +23,13 @@
                 <h2> Détails de la carte </h2>  <br>
 
                 <label for="numcarte"> <strong>N° carte : </strong></label> 
-                <input type="text" id="numcarte" size = 20> <br> <br>
+                <input type="text" id="numcarte" size = 20 required> <br> <br> 
 
                 <label for="dateexpiration"> <strong>Date d'expiration : </strong></label> 
-                <input type="text" id="dateexpiration"size = 20> <br> <br>
+                <input type="text" id="dateexpiration"size = 20 required> <br> <br> 
 
                 <label for="crypt"> <strong>Cryptogramme : </strong></label> 
-                <input type="text" id="crypt" size = 20> <br> <br>
+                <input type="text" id="crypt" size = 20 required> <br> <br> 
 
             </fieldset>
             <br> <br>
@@ -37,30 +37,26 @@
                 <h2> Coordonnées </h2>  <br>
             
                 <label for="nom"> <strong>Nom : </strong></label>
-                <input type="text" id="nom"  size = 20> <br> <br>
+                <input type="text" id="nom"  size = 20 required> <br> <br> 
 
-                <label for="prénom"> <strong>Prénom : </strong></label>
-                <input type="text" id="prénom" size = 20> <br> <br>
+                <label for="prenom"> <strong>Prénom : </strong></label>
+                <input type="text" id="prenom" size = 20 required> <br> <br> 
 
                 <label for="tel"> <strong>Téléphone : </strong> </label> 
-                <input type="tel" id="tel" size = 20> <br> <br>
+                <input type="tel" id="tel" size = 20 required> <br> <br> 
 
                 <h2> Adresse de facturation </h2>  <br>
 
                 <label for="adresse"> <strong>Adresse : </strong></label>
-                <input type="text" id="adresse" size = 20> <br> <br>
+                <input type="text" id="adresse" size = 20 required> <br> <br> 
 
                 <label for="codepostal"> <strong>Code Postal : </strong> </label> 
-                <input type="text" id="codepostal" size = 20> <br> <br>
+                <input type="text" id="codepostal" size = 20 required> <br> <br> 
 
             </fieldset>
             <br> 
 
-            <input type="checkbox" id="facture" name = "facture"> 
-            <label for="facture"> <strong>Je certifie </strong> avoir pris connaissance des conditions générales de vente du Pass IDF </label>
-            <br> <br>
-
-            <button type = "submit"> Payer </button> <br> <br>
+            <button type = "submit" onclick="valider()"> Payer </button> <br> <br>
 
         </form>
 
@@ -68,6 +64,27 @@
     <footer>
         <p>© 2021 Efrei</p>
     </footer>
+
+    <script>
+
+    function valider(){
+
+        if (document.getElementById("numcarte").checkValidity()&&
+            document.getElementById("dateexpiration").checkValidity()&&
+            document.getElementById("crypt").checkValidity()&&
+            document.getElementById("nom").checkValidity()&&
+            document.getElementById("prenom").checkValidity()&&
+            document.getElementById("tel").checkValidity()&&
+            document.getElementById("adresse").checkValidity()&&
+            document.getElementById("codepostal").checkValidity()
+            )
+            {
+                alert("Merci pour votre commande! \n Un email de confirmation vous a été envoyé!")
+                // problème de redirection de page à régler
+                window.replace.href="../Accueil.html";
+            }
+    }
+    </script>
     
 </body>
 </html>
