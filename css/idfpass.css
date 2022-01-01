@@ -57,6 +57,7 @@ td,th {
 
 .myheader{
     text-align: center;
+    padding-bottom: 100px;
 }
 
 .container{
@@ -141,7 +142,7 @@ td,th {
   
   .card {
     display: flex;
-    height: 500px;
+    height: 400px;
     width: 500px;
     background-color: #17141d;
     border-radius: 10px;
@@ -151,9 +152,9 @@ td,th {
     left: 0px;
   }
   
-  .card:not(:first-child) {
+  /*.card:not(:first-child) {
       margin-left: -50px;
-  }
+  }*/
   
   .card:hover {
     transform: translateY(-20px);
