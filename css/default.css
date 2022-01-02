@@ -1,57 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
 /* Les propriétés css s'appliquent aux tags "a" du tag "li" */
 html {
   scroll-behavior: smooth;
 }
-li a {
-    float: right;
-    margin: 0;
-    padding: 0;
-    display: block;
-    color: #617D89;
-    text-align: center;
-    padding: 20px 20px;
-    text-decoration: none;
+
+body {
+  font-size: 15px;
 }
-/* Permet de changer la couleur des items leur de leur survol */
-li a:hover {
-    background-color: #C8F0FF;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
+
+ul {
+  list-style: none;
 }
+
+/* Nav Bar */
 .nav_menu {
-    position:fixed;
-    z-index: 4;
-    width: 100%;
-    top: 0;
-    left: 0;
-    padding-inline-start: 0;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #f2fbff;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  background-color: #F2FBFF;
+  z-index: 1;
 }
-.logos {
-    margin: 0;
-    padding: 0;
-    float: left;
+
+.nav_menu .logos img {
+  height: 56px;
+  width: 160px;
 }
+
+.nav_menu ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_menu ul li a {
+  display: block;
+  color: #617D89;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  transition: .3s ease-in-out;
+}
+
+.nav_menu ul li a:hover,
+.nav_menu ul li a.active {
+  background-color: #C8F0FF;
+  color: #000;
+}
+
+.header-background.background {
+  display: block;
+}
+
 .navigation {
   padding-bottom: 50px;
 }
 
-* {box-sizing:border-box}
+* {
+  box-sizing: border-box
+}
+
 header {
   background: #f7f7f7;
 }
+
 .banner {
   height: 65vh;
 }
 
-.banner.commande-banner {
+.banner.home-banner {
   background-image: url(../images/eiffel-new.jpg);
+  margin-top: -65px;
 }
+
 header .banner .container {
   display: flex;
   flex-direction: column;
@@ -59,34 +91,32 @@ header .banner .container {
   justify-content: center;
   height: 100%;
 }
+
 header .banner {
   width: 100%;
   background-size: cover;
   border-radius: 0 0 2000px 2000px / 0 0 400px 400px;
   background-position: center;
 }
-header .banner .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
+
 .container {
   position: relative;
   max-width: 1320px;
   margin: 0 auto;
 }
-.section-title  {
+
+.section-title {
   background: #f7f7f7;
   padding: 50px 0;
 }
+
 .banner-title {
   color: #fff;
   font-size: 40px;
   text-align: center;
   vertical-align: middle;
 }
+
 .section-title .title {
   text-align: left;
   padding: 0 10px;
@@ -118,13 +148,7 @@ header .banner .container {
   font-size: 20px;
   line-height: 30px;
 }
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
-* {
-  font-family: 'Roboto Condensed', sans-serif;
-}
-body {
-  margin: 0;
-}
+
 .parallax-wrapper {
   perspective: 1px;
   transform-style: preserve-3d;
@@ -132,11 +156,13 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
 }
+
 .bg {
   flex: 1 0 auto;
   z-index: 1;
   transform: translateZ(-1px) scale(2);
 }
+
 .background {
   background-position: center;
   background-size: cover;
@@ -150,18 +176,23 @@ body {
   align-items: center;
   transform: translateZ(-1px) scale(2);
 }
+
 .background--spring {
   background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/da/Precincts_of_Watari-jinja_shrine_in_Spring_season_2.JPG');
 }
+
 .background--summer {
   background-image: url('https://images.pexels.com/photos/375152/summer-sun-blooming-season-375152.jpeg?cs=srgb&dl=beautiful-bloom-blossom-375152.jpg&fm=jpg');
 }
+
 .background--fall {
   background-image: url('https://images.pexels.com/photos/33060/road-forest-season-autumn.jpg?cs=srgb&dl=autumn-fall-forest-33060.jpg&fm=jpg');
 }
+
 .background--winter {
   background-image: url('https://images.pexels.com/photos/235595/pexels-photo-235595.jpeg?cs=srgb&dl=branches-cold-season-235595.jpg&fm=jpg');
 }
+
 .titre {
   position: absolute;
   margin: 0;
@@ -175,7 +206,7 @@ body {
   height: 100px;
   color: white;
   font-size: 5rem;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .season-desc {
@@ -191,41 +222,51 @@ body {
   margin: 0;
   display: flex;
 }
-  .desc-wrapper {
-    margin: auto;
-    box-sizing: border-box;
-  }
-  .season--title {
-    text-align: center;
-    font-size: 4rem;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    margin: 20px 0;
-  }
-  .season--about {
-    margin-top: 50px;
-    padding: 0;
-  }
+
+.desc-wrapper {
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.season--title {
+  text-align: center;
+  font-size: 4rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+.season--about {
+  margin-top: 50px;
+  padding: 0;
+}
+
 @media (max-width: 998px) and (orientation: portrait) {
   .season-desc {
     padding: 1.5rem 20px;
     font-size: 1rem;
     height: unset;
     min-height: 100vh;
-    .season-title {
-      font-size: 2.5rem;
-      margin: 20px 0;
-      letter-spacing: unset;
-     }
-    .season-about {
-      margin-top: 20px;
-     }
-   }
- }
-footer {
-    display: flex;
-    justify-content: center;
-    padding: 5px;
-    background-color: #F2FBFF;
-    color: #617D89;
+  }
+
+  .season-title {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    letter-spacing: unset;
+  }
+
+  .season-about {
+    margin-top: 20px;
+  }
+}
+
+/**
+ * Footer
+ */
+ footer {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  background-color: #F2FBFF;
+  color: #617D89;
 }

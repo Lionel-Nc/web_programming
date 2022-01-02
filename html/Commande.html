@@ -1,364 +1,183 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title> Commande Pass IDF </title>
-        <link rel="stylesheet" href="../css/commande.css">
-        <link rel="icon" type="image/png" href="../images/logo.png" />
-        <script type="text/javascript" src="../js/default.js"></script>
-        <form name="newCommand" action="#" class="box" id="new-command" onsubmit="return false"> 
-    </head>
-<body>
-    <ul class="nav_menu">
-        <li class="logos"><img src="../images/log.png" alt="logo" height="56" width="160"></li>
-        <li><a href="about.html">A propos</a></li>
-        <li><a href="activites.html">Activités</a></li>
-        <li><a href="commande.html">Commande</a></li>
-        <li><a href="idfpass.html">Idf pass</a></li>
-        <li><a href="../Accueil.html">Accueil</a></li>
-    </ul>
 
-        <div class="row">
-            <div class="column">
-              <div class="card">
-                <h3>Pass 1 </h3>
-                <p>Adulte</p>
-                <p>Enfant</p>
-              </div>
-            </div>
-            <div class="column">
-              <div class="card">
-                <h3>Pass 2 </h3>
-                <p>Adulte</p>
-                <p>Enfant</p>
-            </div>
-            </div>
-            <div class="column">
-              <div class="card">
-                <h3>Pass 3 </h3>
-                <p>Adulte</p>
-                <p>Enfant</p>
-              </div>
-            </div>
-            <div class="column">
-              <div class="card">
-                <h3>Pass 4 </h3>
-                <p>Adulte</p>
-                <p>Enfant</p>
-              </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Commande Pass IDF | Idf Tourisme</title>
+
+  <link rel="stylesheet" href="../css/commande.css">
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <script type="text/javascript" src="../js/commande.js" defer></script>
+  <script type="text/javascript" src="../js/main.js" defer></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="conteneur">
+      <nav class="nav_menu">
+        <h1 class="logos">
+          <img src="../images/log.png" alt="logo">
+        </h1>
+        <ul>
+          <li><a href="about.html">A propos</a></li>
+          <li><a href="activites.html">Activités</a></li>
+          <li><a href="commande.html" class="active">Commande</a></li>
+          <li><a href="idfpass.html">Idf pass</a></li>
+          <li><a href="../Accueil.html">Accueil</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="banner commande-banner">
+      <div class="conteneur">
+        <h3 class="banner-title">Commande</h3>
+        <p class="banner-description">Description à ajouter</p>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-child"><a href="index.html">Accueil</a></li>
+          <li class="breadcrumb-child"><a href="#">Commandes</a></li>
+        </ol>
+        <img class="img-globe" src="assets/images/globe.png" alt="">
+      </div>
+    </div>
+  </header>
+
+  <section class="section-title">
+    <div class="conteneur">
+      <div class="title">
+        <p>Texte à ajouter</p>
+        <h1>Commander votre Pass IDF !</h1>
+      </div>
+
+      <div class="description">
+        <h2>Slogan à ajouter</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero amet iste quidem quas nesciunt similique facilis. Quos pariatur minus quo, perferendis expedita illo maxime atque magni dolor. Neque, laudantium? Incidunt!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-content">
+    <div class="conteneur">
+      <div class="content-aside">
+        <div class="content">
+          <div class="content-item">
+            <div class="form-command">
+              <form class="js-form-command" action="#" method="post">
+                <div id="commande">
+                  <h2 class="form-title">Commande</h2>
+                  <div class="content-input">
+                    <label for="typepass">Type de pass: </label>
+                    <select class="input" id="typepass" name="typepass" required>
+                      <option value="PassIDF n°1">PassIDF n°1</option>
+                      <option value="PassIDF n°2">PassIDF n°2</option>
+                      <option value="PassIDF n°3">PassIDF n°12</option>
+                    </select>
+                  </div>
+
+                  <div class="content-input">
+                    <label for="nbadultes">Adultes: </label>
+                    <select class="input" id="nbadultes" name="nbadultes" required>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                  </div>
+
+                  <div class="content-input">
+                    <label for="nbenfants">Enfants: </label>
+                    <select class="input" id="nbenfants" name="nbenfants" required>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                  </div>
+    
+                  <div class="content-input">
+                    <label for="date"> Date : </label>
+                    <input class="input" type="date" id="date" name="date" required>
+                  </div>
+    
+                  <div class="content-buttons">
+                    <button type="reset" class="button button-red">Supprimer</button>
+                    <button type="submit" class="button button-blue">Ajouter</button>
+                    <a class="button" href="#personnelles">Suivant</a>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
 
-
-        <h1> Commander votre Pass IDF !</h1> 
-
-      <div class="bigcontainer">
-
-        <div class="smallcontainer1">
-          <form>
-            <fieldset >
-                <h2> Commande </h2>
-
-                <div >
-                        <label for="typepass"> Type de pass: </label>
-                        <select id = "typepass">
-                            <option> PassIDF n°1 </option>
-                            <option> PassIDF n°2 </option>
-                            <option> PassIDF n°3 </option>
-                        </select> <br> <br>
-
-                        <label for="nbAdultes"> Adultes: </label>
-                        <select id = "nbAdultes">
-                            <option> 1 </option>
-                            <option> 2 </option>
-                            <option> 3 </option>
-                            <option> 4 </option>
-                            <option> 5 </option>
-                            <option> 6 </option>
-                            <option> 7 </option>
-                            <option> 8 </option>
-                            <option> 9 </option>
-                            <option> 10 </option>
-                        </select> <br> <br>
-
-                        <label for="nbEnfants"> Enfants: </label>
-                        <select id = "nbEnfants">
-                            <option> 1 </option>
-                            <option> 2 </option>
-                            <option> 3 </option>
-                            <option> 4 </option>
-                            <option> 5 </option>
-                            <option> 6 </option>
-                            <option> 7 </option>
-                            <option> 8 </option>
-                            <option> 9 </option>
-                            <option> 10 </option>
-                        </select> <br> <br>
-
-                        <label for="date"> Date : </label>
-                        <input type="date" id="date" name ="date" required> <br>
-
-                        <span class="error"> <p id="ajout_error"> </p> </span>
-
-                        <p> 
-                          <button type="submit" class="btn" onclick="ajouter()">Ajouter</button>
-                          <button type="reset"  class="btn" onclick="supprimer()">Supprimer</button>
-                        </p>
-              </div>
-              <br> <br>
-            </fieldset>
-
-            <fieldset>
-
-              <h2> Informations personnelles</h2> 
-
-              <label for="nom"> <strong>Nom : </strong></label> <br>
-              <input type="text" id="nom" size = 20 > <br> 
-              <span class="error"> <p id="nom_error"> </p> </span>
-
-              <label for="prenom"> <strong>Prénom : </strong></label> <br>
-              <input type="text" id="prenom" size = 20 > <br> 
-              <span class="error"> <p id="prenom_error"> </p> </span>
-
-              <label for="adresse"> <strong>Adresse : </strong></label> <br>
-              <input type="text" id="adresse" size = 20 > <br> 
-              <span class="error"> <p id="adresse_error" > </p> </span>
-
-              <label for="tel"> <strong>Téléphone : </strong> </label> <br>
-              <input type="tel" id="tel" size = 20 > <br> 
-              <span class="error"> <p  id="tel_error"> </p> </span>
-
-              <label for="email"> <strong>Email : </strong> </label> <br>
-              <input type="email" id="email" size = 20 > <br>
-              <span class="error"> <p  id="email_error" ></p> </span>
-
-              <label for="conf_email"> <strong>Confirmation email : </strong> </label> <br>
-              <input type="email" id="conf_email"  size = 20 > <br>
-              <span class="error"> <p  id="conf_email_error"> </p> </span>
-
-              <label for="mdp"> <strong>Mot de passe : </strong></label> <br>
-              <input type="password" id="mdp"  size = 20 > <br> 
-              <span class="error"> <p id="mdp_error" ></p> </span>
-
-              <label for="conf_mdp"> <strong>Confirmation mot de passe : </strong> </label> <br>
-              <input type="password" id="conf_mdp"  size = 20 > <br> 
-              <span class="error"> <p id="conf_mdp_error"  > </p> </span>
-
-            </fieldset>
-            <br> 
-          </form>
-        </div>
-
-        <div class="smallcontainer2">
-          <fieldset class = total>
-             Récapitultif <br>
-            <table class="datatable">
-              <thead>
-                <tr>
-                  <th> Article </th>
-                  <th> Prix </th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </fieldset>
-        </div>
-      </div>
-
-    <input type="checkbox" id="facture" name = "facture"> 
-    <label for="facture"> <strong>Je certifie </strong> avoir pris connaissance des conditions générales de vente du Pass IDF </label>
-    <br> 
-    <span class="error"> <p id="facture_error"  > </p> </span>
-
-    <button type="submit" class="submit" onclick="valider()"> Confirmer </button> <br> <br>
+          <div class="content-item">
+            <div class="form-command">
+              <form class="js-form-personnelles" action="#" method="post">
+                <div id="personnelles">
+                  <h2 class="form-title"> Informations personnelles</h2>
+                  <div class="content-input">
+                      <label for="nom">Nom: </label>
+                      <input type="text" class="input" id="nom" name="nom" placeholder="Votre nom" required>
+                  </div>
           
-    <footer>
-        <p>© 2021 Efrei</p>
-    </footer>
-    
+                  <div class="content-input">
+                      <label for="prenom">Prénom: </label>
+                      <input type="text" class="input" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                  </div>
+          
+                  <div class="content-input">
+                      <label for="adresse">Adresse: </label>
+                      <input type="text" class="input" id="adresse" name="adresse" placeholder="Votre adresse" required>
+                  </div>
+          
+                  <div class="content-input">
+                      <label for="telephone">Téléphone: </label>
+                      <input type="number" class="input" id="telephone" name="telephone" placeholder="Votre téléphone" required>
+                  </div>
+          
+                  <div class="content-input">
+                      <label for="email">Email: </label>
+                      <input type="email" class="input" id="email" name="email" placeholder="Votre email" required>
+                  </div>
+          
+                  <div class="content-buttons">
+                      <button type="reset" class="button button-red">Supprimer</button>
+                      <button type="submit" class="button button-blue">Payer</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
 
+        <aside class="aside">
+          <h4 class="aside-title">Récapitultif</h4>
+          <div class="">
+            <ul class="recapitulatif"></ul>
+            <div class="total-amount">total: <span></span></div>
+            <div class="total-reset"><a href="#" class="button button-red js-reset-storage">VIDER</a></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
 
-
-  <script>
-
-  var newCommandForm = document.forms.newCommand; 
-
-  var ajout = 0
-function ajouter(){
-
-  if (document.newCommand.date.checkValidity()) {
-    const newArticleTr = document.createElement('tr')
-    const typePassTd = document.createElement('td')
-    const prixtotalPassTd = document.createElement('td')
-    const newAdultesTr = document.createElement('tr')
-    const typeadulteTd = document.createElement('td')
-    const nbadulteTd = document.createElement('td')
-    const newEnfantsTr = document.createElement('tr')
-    const typeenfantTd = document.createElement('td')
-    const nbenfantTd = document.createElement('td')
-    typePassTd.textContent = document.newCommand.typepass.value
-    prixtotalPassTd.textContent = "prix total à dét"
-    typeadulteTd.textContent = "Adultes" 
-    nbadulteTd.textContent = document.newCommand.nbAdultes.value  
-    typeenfantTd.textContent = "Enfants" 
-    nbenfantTd.textContent = document.newCommand.nbEnfants.value
-
-    newArticleTr.append(typePassTd,prixtotalPassTd)
-    newAdultesTr.append(typeadulteTd,nbadulteTd)
-    newEnfantsTr.append(typeenfantTd,nbenfantTd)
-
-   /* le premier élément dans le document qui contient la classe "datatable" est retourné*/
-    const table = document.querySelector('.datatable tbody')
-
-    table.appendChild(newArticleTr, newAdultesTr, newEnfantsTr)
-    ajout++;
-  }
-  //const selectEntree = document.getElementById("entreeId");
-  //const valeurselectionnee = selectEntree.options[selectEntree.selectedIndex].value;
-  //const textselectionne = selectEntree.options[selectEntree.selectedIndex].text;
-
-}
-
-  // supprimer toutes les lignes du tableau
-function supprimer() {
-      const tbody = document.querySelector('.datatable tbody')
-      while (tbody.firstChild) {
-        tbody.removeChild(tbody.firstChild)
-      }
-  
-}
-
-
-function valider() {
-
-  var error = 0; 
-  
-  // vérifier qu'au moins un article est commandé
-  if (ajout==0) {
-    document.getElementById("ajout_error").innerHTML = "Veuillez ajouter au moins un article à la commande.";
-    error++;
-  }
-  else {
-    document.getElementById("ajout_error").innerHTML = "";
-  }
-
-  //vérifier que tous les champs du formulaire sont remplis
-  var v_nom = document.getElementById("nom").value;
-  if (v_nom== "") {
-      document.getElementById("nom_error").innerHTML = "Ce champs est obligatoire.";
-      error++;
-  }
-  else {
-    document.getElementById("nom_error").innerHTML = "";
-  }
-
-  var v_prenom = document.getElementById("prenom").value;
-  if (v_prenom== "") {
-    document.getElementById("prenom_error").innerHTML = "Ce champs est obligatoire.";
-    error++;
-  }
-  else {
-    document.getElementById("prenom_error").innerHTML = "";
-  }
-
-  var v_adresse = document.getElementById("adresse").value;
-  if (v_adresse== "") {
-    document.getElementById("adresse_error").innerHTML = "Ce champs est obligatoire.";
-    error++;
-  }
-  else {
-    document.getElementById("adresse_error").innerHTML = "";
-  }
-
-  var v_tel= document.getElementById("tel").value;
-  if (v_tel == null || v_tel== "") {
-    document.getElementById("tel_error").innerHTML = "Ce champs est obligatoire.";
-    error++;
-  }
-  else {
-    document.getElementById("tel_error").innerHTML = "";
-  }
-
-  var v_email = document.getElementById("email").value;
-  if (v_email == null || v_email== "") {
-      document.getElementById("email_error").innerHTML = "Ce champs est obligatoire.";
-      error++;
-    }
-  else {
-    document.getElementById("email_error").innerHTML = "";
-  }
-
-  var v_conf_email = document.getElementById("conf_email").value;
-  if (v_conf_email == null || v_conf_email== "") {
-      document.getElementById("conf_email_error").innerHTML = "Ce champs est obligatoire.";
-      error++;
-    }
-  else {
-    // vérification de la confirmation
-    if (v_email!=v_conf_email){
-      document.getElementById("conf_email_error").innerHTML = "Les mails saisis ne sont pas identiques.";
-      error++;
-    }
-    else {
-      document.getElementById("conf_email_error").innerHTML = ""
-    };
-  }
-
-  var v_mdp = document.getElementById("mdp").value;
-  if (v_mdp == null || v_mdp== "") {
-      document.getElementById("mdp_error").innerHTML = "Ce champs est obligatoire.";
-      error++;
-    }
-  else {
-    document.getElementById("mdp_error").innerHTML = "";
-  }
-
-  var v_conf_mdp = document.getElementById("conf_mdp").value;
-  if (v_conf_mdp == null || v_conf_mdp== "") {
-      document.getElementById("conf_mdp_error").innerHTML = "Ce champs est obligatoire.";
-      error++;
-    }
-  else {
-    // vérification de la confirmation
-    if (v_mdp!=v_conf_mdp){
-      document.getElementById("conf_mdp_error").innerHTML = "Les mots de passe saisis ne sont pas identiques.";
-      error++;
-    }
-    else {
-      document.getElementById("conf_mdp_error").innerHTML = ""
-    };
-  }
-
-  /*var variable = [nom, prenom, adresse, tel, email, conf_email, mdp, conf_mdp];
-  variable.forEach( function(v){
-    var val = document.form.v.value;
-    if (val == null || val== "") {
-      document.getElementById(v.toString()+'_error').innerHTML = "This field must be filled out";
-    };
-  });*/
-
-
-  // vérifier que la case sur les conditions de vente est remplie
-  if(document.getElementById("facture").checked==false){
-    document.getElementById("facture_error").innerHTML = "Ce champs est obligatoire.";
-      error++;
-  }
-  else {
-      document.getElementById("facture_error").innerHTML = ""
-  };
-
-  // penser à ajouter une condition sur la date : date > date d'aujourd'hui
-
-  // si toutes les conditions sont remplies passer à la page suivante
-  // console.log(error);
-  if (error==0){
-    window.location.href="paiement.html";
-  }
-}
-
-
-</script>
-
+  <footer>
+    © 2021 Efrei
+  </footer>
 </body>
 </html>
