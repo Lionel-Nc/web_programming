@@ -1,159 +1,136 @@
-.banner.commande-banner {
-  background-image: url(../images/cathedrale.jpg);
+/* Les propriétés css s'appliquent aux tags "a" du tag "li" */
+li a {
+    float: right;
+    margin: 0;
+    padding: 0;
+    display: block;
+    color: #617D89;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
 }
-
-.banner.commande-banner .img-globe {
-  position: absolute;
-  bottom: 30px;
-  left: 100px;
-  width: 250px;
+/* Permet de changer la couleur des items leur de leur survol */
+li a:hover {
+    background-color: #C8F0FF;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
 }
-
-.content {
+.nav_menu {
+    position:fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-inline-start: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F2FBFF;
+}
+.logos {
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 5px;
+  background-color: #F2FBFF;
+  color: #617D89;
+  width : 100%;
 }
-
-.content .firts-content {
-  width: 50%;
+/* Float four columns side by side */
+.column {
+    box-sizing: border-box;
+    float: left;
+    width: 20%;
+    padding: 0 30px;
+  }
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {  
+    box-sizing: border-box;
+    width: 80%;
+    padding-top: 100px;
+    margin-left: 15%;
 }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    box-sizing: border-box;
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 5px;
+    text-align: center;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    
+  }
+  /* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
 
-.content .second-content {
-  width: 50%;
-}
-
-.form-steps-content {
-  width: 100%;
-  margin: 30px auto;
-  text-align: center;
-  position: relative;
-}
-
-.form-steps-content .form-steps {
-  margin-bottom: 30px;
-  overflow: hidden;
-  counter-reset: step;
-}
-
-.form-steps-content .form-steps li {
-  list-style-type: none;
-  color: #000;
-  text-transform: uppercase;
-  font-size: 10px;
-  width: 33.33%;
-  float: left;
-  position: relative;
-}
-
-.form-steps-content .form-steps li:before {
-  content: counter(step);
-  counter-increment: step;
-  width: 40px;
-  line-height: 40px;
-  display: block;
-  font-size: 15px;
-  color: #fff;
-  background: #000;
-  border-radius: 50%;
-  margin: 0 auto 5px auto;
-}
-
-.form-steps-content .form-steps li:after {
-  content: "";
-  width: 100%;
-  height: 4px;
-  background: #000;
-  position: absolute;
-  left: -50%;
-  top: 16px;
-  z-index: -1;
-}
-
-.form-steps-content .form-steps li:first-child:after {
-  content: none;
-}
-
-.form-steps-content .form-steps li.active {
-  color: #3bb5d3;
-}
-
-.form-steps-content .form-steps li.active:before,
-.form-steps-content .form-steps li.active:after {
-  background: #3bb5d3;
-}
-
-.form-command {
-  padding: 0 50px;
-}
-
-.content-buttons {
-  text-align: right;
-  margin-top: 50px;
-}
-
-.content-buttons button {
-  border: none;
-  border-radius: 2px;
-  letter-spacing: .5px;
-  display: inline-block;
-  height: 36px;
-  line-height: 36px;
-  padding: 0 16px;
-  text-transform: uppercase;
-  vertical-align: middle;
-  color: #fff;
-  background: #454560;
-  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
-  transition: .3s ease-in-out;
-  cursor: pointer;
-}
-
-.content-buttons button[type=submit] {
-  background: #0d47a1;
-}
-
-.content-buttons button[type=reset] {
-  background: #b71c1c;
-}
-
-.content-buttons button:hover {
-  opacity: .7;
-}
-
-#commande h2,
-#personnelles h2,
-#paiement h2 {
-  text-align: center;
-  font-size: 15px;
-  text-transform: uppercase;
-  margin-bottom: 35px;
+button {
+    position: relative;
+    float : right;
 }
 
 
-.recapitulatif-item {
-  padding: 10px;
+fieldset{
+  border: 1px solid black;
+  padding: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
   margin-bottom: 10px;
-  box-shadow: 0px 3px 6px 0px rgb(0 0 0 / 30%);
-  border-radius: 5px;
+  border-radius: 20px;
+  width:70%; 
 }
 
-.recapitulatif-item span {
-  display: block;
-  text-align: right;
-  color: #454560;
-  text-transform: uppercase;
-  font-size: 10px;
-  font-weight: bold;
+.total{
+  border: 1px solid black;
+  border-radius: 20px;
+  height: 100%;
 }
 
-.total-amount {
-  text-align: right;
-  margin-top: 20px;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 20px;
+.bigcontainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-#paiement {
-  margin-top: 100px;
+.smallcontainer1{
+  display:flex;
+  flex-direction: column;
+  margin-left: 10px;
+  width:90%;
+}
+
+.smallcontainer2{
+  display:flex;
+  flex-direction: column;
+  margin-right : 10px;
+  width:30%;
+}
+
+
+.submit{
+  margin-right: 10px;
+}
+
+.error {
+  color: red;
+  font-size: 60%;
 }

@@ -1,4 +1,7 @@
 /* Les propriétés css s'appliquent aux tags "a" du tag "li" */
+html {
+  scroll-behavior: smooth;
+}
 li a {
     float: right;
     margin: 0;
@@ -18,6 +21,7 @@ li a:hover {
 }
 .nav_menu {
     position:fixed;
+    z-index: 4;
     width: 100%;
     top: 0;
     left: 0;
@@ -26,7 +30,7 @@ li a:hover {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #F2FBFF;
+    background-color: #f2fbff;
 }
 .logos {
     margin: 0;
@@ -38,99 +42,186 @@ li a:hover {
 }
 
 * {box-sizing:border-box}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 5000px;
-  margin: auto;
-  
+header {
+  background: #f7f7f7;
+}
+.banner {
+  height: 65vh;
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
+.banner.commande-banner {
+  background-image: url(../images/eiffel-new.jpg);
 }
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+header .banner .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
+header .banner {
   width: 100%;
+  background-size: cover;
+  border-radius: 0 0 2000px 2000px / 0 0 400px 400px;
+  background-position: center;
+}
+header .banner .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.container {
+  position: relative;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.section-title  {
+  background: #f7f7f7;
+  padding: 50px 0;
+}
+.banner-title {
+  color: #fff;
+  font-size: 40px;
+  text-align: center;
+  vertical-align: middle;
+}
+.section-title .title {
+  text-align: left;
+  padding: 0 10px;
+  display: table;
+  border-left: 5px solid #3bb5d3;
+  margin: 0 auto;
+}
+
+.section-title .title h1 {
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.section-title .description {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 50px;
   text-align: center;
 }
 
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
+.section-title .description h2 {
+  color: #253b56;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
 
+.section-title .description p {
+  color: #253b56;
+  font-size: 20px;
+  line-height: 30px;
+}
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+* {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+body {
+  margin: 0;
+}
+.parallax-wrapper {
+  perspective: 1px;
+  transform-style: preserve-3d;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.bg {
+  flex: 1 0 auto;
+  z-index: 1;
+  transform: translateZ(-1px) scale(2);
+}
+.background {
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex: 1 0 auto;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(-1px) scale(2);
+}
+.background--spring {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/da/Precincts_of_Watari-jinja_shrine_in_Spring_season_2.JPG');
+}
+.background--summer {
+  background-image: url('https://images.pexels.com/photos/375152/summer-sun-blooming-season-375152.jpeg?cs=srgb&dl=beautiful-bloom-blossom-375152.jpg&fm=jpg');
+}
+.background--fall {
+  background-image: url('https://images.pexels.com/photos/33060/road-forest-season-autumn.jpg?cs=srgb&dl=autumn-fall-forest-33060.jpg&fm=jpg');
+}
+.background--winter {
+  background-image: url('https://images.pexels.com/photos/235595/pexels-photo-235595.jpeg?cs=srgb&dl=branches-cold-season-235595.jpg&fm=jpg');
+}
+.titre {
   position: absolute;
-  top: 0;
+  margin: 0;
+  top: calc(50% - 50px);
+  width: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  height: 100px;
+  color: white;
+  font-size: 5rem;
+  background: rgba(0,0,0,0.4);
 }
 
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+.season-desc {
+  z-index: 2;
+  position: relative;
+  background: #282E34;
+  color: white;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  line-height: 2em;
+  padding: 3rem;
+  height: 100vh;
+  margin: 0;
+  display: flex;
 }
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
+  .desc-wrapper {
+    margin: auto;
+    box-sizing: border-box;
+  }
+  .season--title {
+    text-align: center;
+    font-size: 4rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin: 20px 0;
+  }
+  .season--about {
+    margin-top: 50px;
+    padding: 0;
+  }
+@media (max-width: 998px) and (orientation: portrait) {
+  .season-desc {
+    padding: 1.5rem 20px;
+    font-size: 1rem;
+    height: unset;
+    min-height: 100vh;
+    .season-title {
+      font-size: 2.5rem;
+      margin: 20px 0;
+      letter-spacing: unset;
+     }
+    .season-about {
+      margin-top: 20px;
+     }
+   }
+ }
 footer {
     display: flex;
     justify-content: center;
