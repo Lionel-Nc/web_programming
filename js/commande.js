@@ -1,123 +1,30 @@
 
-let commandPreviouData = [];
+const getCommandeInfos = () => {
+
+    const storage = localStorage.getItem("commandesInfos");
+    if (storage != null) {
+
+        return JSON.parse(storage);
+    } else {
+
+        const commandesInfos = new Object();
+        commandesInfos.commandes = new Array();
+        commandesInfos.personnelles = null;
+        return commandesInfos;
+    }
+    
+};
+
+let commandesInfos = getCommandeInfos();
 const recapitulatif = document.querySelector('.recapitulatif');
-const form = document.querySelector('.js-form-command');
-const formSteps = document.querySelectorAll('.form-steps li');
+const forms = document.querySelectorAll('form');
+const resetStorage = document.querySelector('.js-reset-storage');
 
 const recapitulatifItem = (data) => {
     return `<li class="recapitulatif-item">
-        <p>Article: ${data.command.typepass}</p>
-        <span>Adultes: ${data.command.nbadultes} | Enfants: ${data.command.nbenfants}</span>
+        <p>Article: ${data.typepass}</p>
+        <span>Adultes: ${data.nbadultes} | Enfants: ${data.nbenfants}</span>
     </li>`;
-}
-
-const commandForm = () => {
-    return `<div id="commande">
-        <h2>Commande</h2>
-        <div class="content-input">
-        <label for="typepass">Type de pass: </label>
-        <select class="input" id="typepass" name="typepass" required>
-            <option value="PassIDF n°1">PassIDF n°1</option>
-            <option value="PassIDF n°2">PassIDF n°2</option>
-            <option value="PassIDF n°3">PassIDF n°12</option>
-        </select>
-        </div>
-
-        <div class="content-input">
-        <label for="nbadultes">Adultes: </label>
-        <select class="input" id="nbadultes" name="nbadultes" required>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-        </div>
-
-        <div class="content-input">
-        <label for="nbenfants">Enfants: </label>
-        <select class="input" id="nbenfants" name="nbenfants" required>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-        </div>
-
-        <div class="content-input">
-        <label for="date"> Date : </label>
-        <input class="input" type="date" id="date" name="date" required>
-        </div>
-
-        <span class="error">
-        <p id="ajout_error"> </p>
-        </span>
-
-        <div class="content-buttons">
-        <button type="reset">Supprimer</button>
-        <button type="submit">suivant</button>
-        </div>
-    </div>`;
-}
-
-const personnellesForm = () => {
-    return `<div id="personnelles">
-        <h2> Informations personnelles</h2>
-        <div class="content-input">
-            <label for="nom">Nom: </label>
-            <input type="text" class="input" id="nom" name="nom" placeholder="Votre nom" required>
-        </div>
-
-        <div class="content-input">
-            <label for="prenom">Prénom: </label>
-            <input type="text" class="input" id="prenom" name="prenom" placeholder="Votre prénom" required>
-        </div>
-
-        <div class="content-input">
-            <label for="adresse">Adresse: </label>
-            <input type="text" class="input" id="adresse" name="adresse" placeholder="Votre adresse" required>
-        </div>
-
-        <div class="content-input">
-            <label for="telephone">Téléphone: </label>
-            <input type="number" class="input" id="telephone" name="telephone" placeholder="Votre téléphone" required>
-        </div>
-
-        <div class="content-input">
-            <label for="email">Email: </label>
-            <input type="email" class="input" id="email" name="email" placeholder="Votre email" required>
-        </div>
-
-        <span class="error">
-            <p id="ajout_error"> </p>
-        </span>
-
-        <div class="content-buttons">
-            <button type="button" onclick="resetForm()">Precedent</button>
-            <button type="submit">Ajouter</button>
-        </div>
-    </div>`;
-}
-
-const paiementForm = () => {
-    return `<div id="paiement">
-        <h2>Paiement</h2>
-        <div class="content-buttons">
-            <button type="button" onclick="resetForm()">Nouvelle article</button>
-            <button type="submit">Payer maintenant</button>
-        </div>
-    </div>`;
 }
 
 const serializeForm = form => {
@@ -133,70 +40,61 @@ const random = (length = 8) => {
     return Math.random().toString(16).substr(2, length);
 };
 
-const activeStep = activeKey => {
+if (commandesInfos) {
+    
+    commandesInfos.commandes.forEach(commande => {
 
-    formSteps.forEach((formStep, key) => {
+        recapitulatif.innerHTML += recapitulatifItem(commande[Object.keys(commande)[0]]);
+    });
 
-        if (formStep.classList.contains('active')) {
+    document.querySelector('.total-amount span').innerText = Object.keys(commandesInfos.commandes).length;
+    if (commandesInfos.personnelles) {
 
-            formStep.classList.remove('active');
-        }
+        Object.keys(commandesInfos.personnelles).forEach(key => {
 
-        if (key == activeKey) {
-
-            formStep.classList.add('active');
-        }
-    })
+            document.querySelector("[name=" + key + "]").value = commandesInfos.personnelles[key];
+        });
+    }
 }
 
-form.addEventListener('submit', e => {
+if (forms) {
+    
+    forms.forEach(form => {
 
-    e.preventDefault();
-    if (form.classList.contains('js-command')) {
+        form.addEventListener('submit', e => {
 
-        activeStep(1);
-        const randomKey = random();
-        commandPreviouData[randomKey] = {
-            "command": serializeForm(form),
-            "personnel": null
-        };
-        form.innerHTML = personnellesForm();
-        form.classList.remove('js-command');
-        form.classList.add('js-personnelles');
-        form.dataset.id = randomKey;
-    } else if (form.classList.contains('js-personnelles')) {
+            e.preventDefault();
+            if (form.classList.contains('js-form-command')) {
+                
+                const randomKey = random();
+                const data = serializeForm(form)
+                const obj = new Object();
+                obj[randomKey] = data;
+                commandesInfos.commandes.push(obj);
+                recapitulatif.innerHTML += recapitulatifItem(data);
+                document.querySelector('.total-amount span').innerText = Object.keys(commandesInfos.commandes).length;
+                localStorage.setItem("commandesInfos", JSON.stringify(commandesInfos));
+            } else if (form.classList.contains('js-form-personnelles')) {
 
-        const formId = form.dataset.id;
-        if (!commandPreviouData[formId]) {
-            alert('Erreur dans le formulaire.');
-            return false;
-        }
+                const data = serializeForm(form)
+                commandesInfos.personnelles = data;
+                localStorage.setItem("commandesInfos", JSON.stringify(commandesInfos));
+                console.log(commandesInfos);
+                console.log(localStorage.getItem("commandesInfos"));
+                window.location.href = 'paiement.html';
+            }
+        });
+    });
+}
 
-        activeStep(2);
-        commandPreviouData[formId].personnel = serializeForm(form);
-        form.classList.remove('js-personnelles');
-        form.classList.add('js-paiement');
-        form.innerHTML = paiementForm();
-        recapitulatif.innerHTML += recapitulatifItem(commandPreviouData[formId]);
-        document.querySelector('.total-amount span').innerText = Object.keys(commandPreviouData).length;
-    } else if (form.classList.contains('js-paiement')) {
-        
-        const formId = form.dataset.id;
-        if (!commandPreviouData[formId]) {
+if (resetStorage) {
+    
+    resetStorage.addEventListener('click', e => {
 
-            alert('Erreur dans le formulaire.');
-            return false;
-        }
-
-        window.location.href = 'paiement.html?id=' + formId
-    }
-});
-
-function resetForm() {
-    form.innerHTML = commandForm();
-    form.classList.add('js-command');
-    form.classList.remove('js-personnelles');
-    form.classList.remove('js-paiement');
-    form.dataset.id = '';
-    activeStep(0);
+        e.preventDefault();
+        localStorage.clear();
+        recapitulatif.innerHTML = '';
+        document.querySelector('.total-amount span').innerText = 0;
+        commandesInfos = getCommandeInfos();
+    })
 }

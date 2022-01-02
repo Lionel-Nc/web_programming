@@ -1,91 +1,180 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title> Paiement </title>
-        <link rel="stylesheet" href="../css/paiement.css">
-        <link rel="icon" type="image/png" href="../images/logo.png" />
-        <script type="text/javascript" src="../js/default.js"></script>
-    </head>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Payer vos Pass IDF | Idf Tourisme</title>
+
+  <link rel="stylesheet" href="../css/paiement.css">
+  <link rel="icon" type="image/png" href="../images/log.png" />
+  <script type="text/javascript" src="../js/commande.js" defer></script>
+  <script type="text/javascript" src="../js/main.js" defer></script>
+</head>
+
 <body>
-    <ul class="nav_menu">
-        <li class="logos"><img src="../images/log.png" alt="logo" height="56" width="160"></li>
-        <li><a href="about.html">A propos</a></li>
-        <li><a href="activites.html">Activités</a></li>
-        <li><a href="commande.html">Commande</a></li>
-        <li><a href="idfpass.html">Idf pass</a></li>
-        <li><a href="../Accueil.html">Accueil</a></li>
-    </ul>
-    <div>
-        <h1> "Frise" avec les étapes de la commande </h1> 
 
-        <form>
-            <fieldset class="container">
-                <h2> Détails de la carte </h2>  <br>
-
-                <label for="numcarte"> <strong>N° carte : </strong></label> 
-                <input type="text" id="numcarte" size = 20 required> <br> <br> 
-
-                <label for="dateexpiration"> <strong>Date d'expiration : </strong></label> 
-                <input type="text" id="dateexpiration"size = 20 required> <br> <br> 
-
-                <label for="crypt"> <strong>Cryptogramme : </strong></label> 
-                <input type="text" id="crypt" size = 20 required> <br> <br> 
-
-            </fieldset>
-            <br> <br>
-            <fieldset class = "container">
-                <h2> Coordonnées </h2>  <br>
-            
-                <label for="nom"> <strong>Nom : </strong></label>
-                <input type="text" id="nom"  size = 20 required> <br> <br> 
-
-                <label for="prenom"> <strong>Prénom : </strong></label>
-                <input type="text" id="prenom" size = 20 required> <br> <br> 
-
-                <label for="tel"> <strong>Téléphone : </strong> </label> 
-                <input type="tel" id="tel" size = 20 required> <br> <br> 
-
-                <h2> Adresse de facturation </h2>  <br>
-
-                <label for="adresse"> <strong>Adresse : </strong></label>
-                <input type="text" id="adresse" size = 20 required> <br> <br> 
-
-                <label for="codepostal"> <strong>Code Postal : </strong> </label> 
-                <input type="text" id="codepostal" size = 20 required> <br> <br> 
-
-            </fieldset>
-            <br> 
-
-            <button type = "submit" onclick="valider()"> Payer </button> <br> <br>
-
-        </form>
-
+  <header>
+    <div class="conteneur">
+      <nav class="nav_menu">
+        <h1 class="logos">
+          <img src="../images/log.png" alt="logo">
+        </h1>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">A propos</a></li>
+          <li><a href="activites.html">Activités</a></li>
+          <li><a href="commande.html" class="active">Commande</a></li>
+          <li><a href="idfpass.html">Idf pass</a></li>
+        </ul>
+      </nav>
     </div>
-    <footer>
-        <p>© 2021 Efrei</p>
-    </footer>
 
-    <script>
+    <div class="banner commande-banner">
+      <div class="conteneur">
+        <h3 class="banner-title">Paiement</h3>
+        <p class="banner-description">Oh tu a ecrire ta petite description ici, max deux lignes pas plus</p>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-child"><a href="index.html">Accueil</a></li>
+          <li class="breadcrumb-child"><a href="commande.html">Commandes</a></li>
+          <li class="breadcrumb-child"><a href="#">Paiement</a></li>
+        </ol>
+        <img class="img-globe" src="assets/images/globe.png" alt="">
+      </div>
+    </div>
+  </header>
 
-    function valider(){
+  <section class="section-title">
+    <div class="conteneur">
+      <div class="title">
+        <p>Tu as te debrouille pour le mot/text ici (tres petit)</p>
+        <h1>Payer votre Pass IDF !</h1>
+      </div>
 
-        if (document.getElementById("numcarte").checkValidity()&&
-            document.getElementById("dateexpiration").checkValidity()&&
-            document.getElementById("crypt").checkValidity()&&
-            document.getElementById("nom").checkValidity()&&
-            document.getElementById("prenom").checkValidity()&&
-            document.getElementById("tel").checkValidity()&&
-            document.getElementById("adresse").checkValidity()&&
-            document.getElementById("codepostal").checkValidity()
-            )
-            {
-                alert("Merci pour votre commande! \n Un email de confirmation vous a été envoyé!")
-                // problème de redirection de page à régler
-                window.replace.href="../Accueil.html";
-            }
-    }
-    </script>
+      <div class="description">
+        <h2>Bah tu balance ton putain de slogan la</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero amet iste quidem quas nesciunt similique facilis. Quos pariatur minus quo, perferendis expedita illo maxime atque magni dolor. Neque, laudantium? Incidunt!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-content">
+    <div class="conteneur">
+      <div class="content-aside">
+        <div class="content">
+          <div class="content-item">
+            <div class="form-command">
+              <form class="js-form-command" action="#" method="post">
+                <div id="commande">
+                  <h2 class="form-title">Détails de la carte</h2>
+  
+                  <div class="content-input">
+                    <label for="numcarte"> N° carte: </label>
+                    <input class="input" type="number" id="numcarte" name="numcarte" placeholder="Numero de la carte" required>
+                  </div>
+
+                  <div class="content-input">
+                    <label for="dateexpiration"> Date d'expiration : </label>
+                    <input class="input" type="date" id="dateexpiration" name="dateexpiration" placeholder="Date d'expiration" required>
+                  </div>
+
+                  <div class="content-input">
+                    <label for="cryptogramme"> Cryptogramme : </label>
+                    <input class="input" type="number" id="cryptogramme" name="cryptogramme" placeholder="123" required>
+                  </div>
     
+                  <div class="content-buttons">
+                    <button type="reset" class="button button-red">Supprimer</button>
+                    <a class="button" href="#personnelles">Suivant</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="content-item">
+            <div class="form-command">
+              <form class="js-form-personnelles" action="#" method="post">
+                <div id="personnelles">
+                  <h2 class="form-title">Coordonnées</h2>
+                  <div class="content-input">
+                      <label for="nom">Nom: </label>
+                      <input type="text" class="input" id="nom" name="nom" placeholder="Votre nom" required>
+                  </div>
+          
+                  <div class="content-input">
+                      <label for="prenom">Prénom: </label>
+                      <input type="text" class="input" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                  </div>
+          
+                  <div class="content-input">
+                      <label for="adresse">Adresse: </label>
+                      <input type="text" class="input" id="adresse" name="adresse" placeholder="Votre adresse" required>
+                  </div>
+          
+                  <div class="content-input">
+                      <label for="telephone">Téléphone: </label>
+                      <input type="number" class="input" id="telephone" name="telephone" placeholder="Votre téléphone" required>
+                  </div>
+          
+                  <div class="content-input">
+                      <label for="email">Email: </label>
+                      <input type="email" class="input" id="email" name="email" placeholder="Votre email" required>
+                  </div>
+          
+                  <div class="content-buttons">
+                      <button type="reset" class="button button-red">Supprimer</button>
+                      <a class="button" href="#form-adresse">Suivant</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="content-item">
+            <div class="form-command">
+              <form class="js-form-adress" action="#" method="post">
+                <div id="form-adresse">
+                  <h2 class="form-title">Adresse de facturation</h2>
+                  <div class="content-input">
+                      <label for="adresse-adresse">Adresse: </label>
+                      <input type="text" class="input" id="adresse-adresse" name="adresse-adresse" placeholder="Votre adresse" required>
+                  </div>
+          
+                  <div class="content-input">
+                      <label for="codepostal">Code postal: </label>
+                      <input type="number" class="input" id="codepostal" name="codepostal" placeholder="Code postal" required>
+                  </div>
+          
+                  <div class="content-buttons">
+                      <button type="reset" class="button button-red">Supprimer</button>
+                      <button type="submit" class="button button-blue">Payer maintenant</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <aside class="aside">
+          <h4 class="aside-title">Récapitultif</h4>
+          <div class="">
+            <ul class="recapitulatif"></ul>
+            <div class="total-amount">total: <span></span></div>
+            <div class="total-reset"><a href="#" class="button button-red js-reset-storage">VIDER</a></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <ul>
+      <li>© 2021 <a href="#">Efrei</a></li>
+      <li><a href="#">Mentions legales</a> | <a href="#">Politique de confidentialite</a></li>
+    </ul>
+  </footer>
 </body>
 </html>

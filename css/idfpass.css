@@ -17,6 +17,7 @@ li a:hover {
     margin: 10px;
 }
 .nav_menu {
+    z-index: 4;
     position:fixed;
     width: 100%;
     top: 0;
@@ -33,16 +34,6 @@ li a:hover {
     padding: 0;
     float: left;
 }
-footer {
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    padding: 5px;
-    background-color: #F2FBFF;
-    color: #617D89;
-}
-
 table {
     border-collapse: collapse;
     width:70%;
@@ -212,6 +203,13 @@ td,th {
     position: absolute;
     left: 20px;
     top: 300px;
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: #F2FBFF;
+    color: #617D89;
   }
 
   
