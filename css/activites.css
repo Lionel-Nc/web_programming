@@ -219,6 +219,15 @@ header .banner .img-globe {
 .background--orsay {
   background-image: url(../images/orsay.jpg);
 }
+.background--fontainebleau {
+  background-image: url(../images/fontainebleau.jpg);
+}
+.background--aquarium {
+  background-image: url(../images/aquarium.jpg);
+}
+.background--parc {
+  background-image: url(../images/parc.jpg);
+}
 .wrapping-desc {
   z-index: 2;
   position: relative;
